@@ -40,7 +40,3 @@ nltk.download('stopwords')
 2. Abre el archivo `001_Webscraping y Visualizacion.ipynb` en Jupyter Notebook.
 3. Ejecuta todas las celdas.
 4. Se mostrará una nube de palabras generada a partir del texto procesado.
-
-## ✍️ Autor
-
-- **Alejandro Schiariti**
