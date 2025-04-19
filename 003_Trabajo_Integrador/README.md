@@ -64,9 +64,3 @@ nltk.download('stopwords')
    - Limpieza del texto.
    - Análisis TF y TF-IDF.
    - Visualizaciones como nubes de palabras y gráficos.
-
----
-
-## ✍️ Autor
-
-- **Alejandro Schiariti**
