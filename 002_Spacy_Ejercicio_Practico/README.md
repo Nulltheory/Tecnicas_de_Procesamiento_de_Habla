@@ -32,13 +32,20 @@ Este proyecto realiza un ejercicio práctico de procesamiento de lenguaje natura
 ```bash
 pip install spacy beautifulsoup4 requests nltk wordcloud matplotlib
 python -m spacy download es_core_news_lg
+```
 
-También es necesario descargar los recursos de stopwords de NLTK:
+## También es necesario descargar los recursos de stopwords de NLTK:
+
+```python
 import nltk
 nltk.download('stopwords')
+```
 
-▶️ Cómo Ejecutar
-1. Asegúrate de tener Python y Jupyter Notebook instalados.
-2. Abre el archivo 002_Spacy_Ejercicio_Practico.ipynb.
+## ▶️ Cómo Ejecutar
+
+1. Asegúrate de tener **Python** y **Jupyter Notebook** instalados.
+2. Abre el archivo `002_Spacy_Ejercicio_Practico.ipynb`.
 3. Ejecuta todas las celdas paso a paso.
-4. Se mostrarán visualizaciones del análisis de entidades y relaciones del texto, así como una nube de palabras.
+4. Se mostrarán:
+   - Visualizaciones del análisis de entidades y relaciones del texto.
+   - Una nube de palabras con los términos más relevantes.
