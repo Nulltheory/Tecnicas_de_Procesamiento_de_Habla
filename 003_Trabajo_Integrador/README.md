@@ -67,7 +67,7 @@ nltk.download('stopwords')
 
 ---
 
-# Integrantes:
+# Integrantes
 
 * [Mujica, Mauricio](https://github.com/mauriciomujica/)
 *	[Poblete, Alfredo](https://github.com/AlfredoPoblete/)
