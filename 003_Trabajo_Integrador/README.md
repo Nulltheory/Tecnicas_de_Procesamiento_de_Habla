@@ -64,3 +64,11 @@ nltk.download('stopwords')
    - Limpieza del texto.
    - Análisis TF y TF-IDF.
    - Visualizaciones como nubes de palabras y gráficos.
+
+---
+
+# Integrantes:
+
+* [Mujica, Mauricio](https://github.com/mauriciomujica/)
+*	[Poblete, Alfredo](https://github.com/AlfredoPoblete/)
+*	[Schiariti, Alejandro](https://github.com/Nulltheory)
