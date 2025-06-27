@@ -1,7 +1,7 @@
 
 # 🛍️ Clasificador de Quejas en E-commerce con Gemini y Gradio
 
-Este proyecto implementa un sistema prototipo que **clasifica mensajes de clientes** como quejas o no, utilizando el modelo de lenguaje **Gemini-Pro de Google**.
+Este proyecto implementa un sistema prototipo que **brinda una respuesta empática para mensajes de clientes** sean quejas o no, utilizando el modelo de lenguaje **Gemini-Pro de Google**.
 
 Diseñado como una solución ligera y demostrativa, el sistema puede integrarse fácilmente en entornos de atención al cliente para priorizar reclamos.
 
@@ -14,7 +14,7 @@ A partir de una pequeña colección de mensajes pre-clasificados, se consulta a 
 El sistema se compone de:
 
 - Un conjunto de datos base de ejemplo
-- Prompts adaptados a Gemini para evaluar mensajes
+- Prompts adaptados a Gemini para evaluar mensajes según su sentimiento
 - Predicción y evaluación de los resultados del modelo
 - Una app interactiva en **Gradio** para pruebas en tiempo real
 
@@ -76,16 +76,7 @@ El sistema se compone de:
 1. Abre el archivo `014_TPFinal.ipynb` en Jupyter Notebook
 2. Ejecuta todas las celdas en orden
 3. Al final, se lanzará una interfaz web de Gradio
-4. Ingresa cualquier mensaje de cliente y obtén la predicción de Gemini
-
----
-
-## 💬 Ejemplo
-
-```text
-Mensaje: "Hace 3 días que espero el envío y no recibí nada"
-Respuesta del modelo: "Sí, es una queja"
-```
+4. Ingresa cualquier mensaje de cliente y obtén una respuesta personalizada de Gemini
 
 ---
 
