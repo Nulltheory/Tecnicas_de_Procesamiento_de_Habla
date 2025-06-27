@@ -1,56 +1,107 @@
-# 🤖 Sistema de Detección de Quejas en E-commerce
 
-Este proyecto implementa un sistema de clasificación automática de mensajes de clientes para detectar si contienen una **queja** o no. Está diseñado especialmente para ser usado en plataformas de atención al cliente dentro del entorno de e-commerce.
+# 🛍️ Clasificador de Quejas en E-commerce con Gemini y Gradio
 
-Incluye un prototipo funcional con una interfaz construida en **Gradio** para probar el modelo de forma interactiva.
+Este proyecto implementa un sistema prototipo que **clasifica mensajes de clientes** como quejas o no, utilizando el modelo de lenguaje **Gemini-Pro de Google**.
+
+Diseñado como una solución ligera y demostrativa, el sistema puede integrarse fácilmente en entornos de atención al cliente para priorizar reclamos.
 
 ---
 
 ## 🧠 Descripción
 
-Se utiliza un conjunto de datos simulado de mensajes de clientes. El flujo general del proyecto incluye:
+A partir de una pequeña colección de mensajes pre-clasificados, se consulta a **Gemini** con prompts cuidadosamente diseñados para determinar si el contenido representa una queja.
 
-- **Carga y preparación de datos**: Dataset simulado con etiquetas (queja / no queja).
-- **Preprocesamiento de texto**:
-  - Conversión a minúsculas
-  - Eliminación de signos de puntuación
-  - Eliminación de stopwords en español
-- **Entrenamiento de modelo de clasificación**:
-  - TF-IDF + Regresión logística
-- **Interfaz gráfica**:
-  - Se implementa una app en Gradio para ingresar mensajes y recibir una predicción inmediata.
+El sistema se compone de:
+
+- Un conjunto de datos base de ejemplo
+- Prompts adaptados a Gemini para evaluar mensajes
+- Predicción y evaluación de los resultados del modelo
+- Una app interactiva en **Gradio** para pruebas en tiempo real
+
+---
+
+## ⚙️ ¿Cómo funciona?
+
+1. Se definen mensajes simulados con etiquetas manuales: "queja" / "no queja"
+2. Se construye un prompt tipo:
+   ```
+   ¿Este mensaje representa una queja de cliente?
+   Mensaje: "<texto>"
+   ```
+3. Se envía el prompt al modelo `gemini-pro` usando la API de Google Generative AI
+4. El modelo responde y la predicción se compara contra la etiqueta real
+5. Se lanza una app web con **Gradio** donde el usuario puede probar el sistema libremente
 
 ---
 
 ## 🛠️ Tecnologías Usadas
 
-- `pandas` – para manipulación del dataset
-- `scikit-learn` – para vectorización y modelado (TF-IDF + Logistic Regression)
-- `nltk` – para procesamiento de texto y stopwords
-- `Gradio` – para construir la interfaz web interactiva
+- `google.generativeai` – Acceso al modelo Gemini-Pro
+- `Gradio` – Interfaz web para probar el clasificador
+- `Python` / `Jupyter Notebook` – Lógica del prototipo
 
 ---
 
-## 📌 Requisitos
+## 📦 Instalación
 
-Instala las dependencias necesarias con:
+1. Clona este repositorio o descarga el notebook:
+   ```bash
+   git clone https://github.com/Nulltheory/Tecnicas_de_Procesamiento_de_Habla.git
+   cd Tecnicas_de_Procesamiento_de_Habla/014_TPFinal
+   ```
 
-```bash
-pip install pandas scikit-learn nltk gradio
-```
+2. Instala los paquetes necesarios:
+   ```bash
+   pip install google-generativeai gradio
+   ```
 
-Además, asegúrate de descargar los recursos de NLTK:
+3. Crea una clave de API para Gemini:
+   - Visita [Google AI Studio](https://makersuite.google.com/)
+   - Copia tu API key
 
-```python
-import nltk
-nltk.download('stopwords')
+4. Configura tu API key en el entorno (recomendado):
+   ```bash
+   export GOOGLE_API_KEY="TU_API_KEY"
+   ```
+
+   O reemplaza directamente en el código:
+   ```python
+   genai.configure(api_key="TU_API_KEY")
+   ```
+
+---
+
+## ▶️ Cómo usar
+
+1. Abre el archivo `014_TPFinal.ipynb` en Jupyter Notebook
+2. Ejecuta todas las celdas en orden
+3. Al final, se lanzará una interfaz web de Gradio
+4. Ingresa cualquier mensaje de cliente y obtén la predicción de Gemini
+
+---
+
+## 💬 Ejemplo
+
+```text
+Mensaje: "Hace 3 días que espero el envío y no recibí nada"
+Respuesta del modelo: "Sí, es una queja"
 ```
 
 ---
 
-## ▶️ Cómo Ejecutar
+## 🎯 Limitaciones y Futuro
 
-1. Asegúrate de tener **Python 3.8+** y **Jupyter Notebook** instalado.
-2. Abre el archivo `014_TPFinal.ipynb` en Jupyter.
-3. Ejecuta todas las celdas en orden.
-4. Al final del notebook, se abrirá una aplicación web con Gradio donde puedes probar el sistema ingresando tus propios mensajes.
+- El dataset es pequeño y simulado, lo que limita su evaluación formal
+- El prompt podría refinarse para mayor precisión o multiclase
+- Puede ampliarse para múltiples idiomas o emociones
+
+---
+
+## 📚 Créditos
+
+Trabajo realizado para la asignatura **Técnicas de Procesamiento del Habla**  
+Autores:
+* [Mujica, Mauricio](https://github.com/mauriciomujica/)
+*	[Poblete, Alfredo](https://github.com/AlfredoPoblete/)
+*	[Schiariti, Alejandro](https://github.com/Nulltheory)
+
